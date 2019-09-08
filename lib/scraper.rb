@@ -22,3 +22,5 @@ class Scraper
     doc = Nokogiri::HTML(open(profile_url))
     student = {}
   end
+
+end
