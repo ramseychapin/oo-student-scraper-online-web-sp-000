@@ -15,14 +15,14 @@ class Scraper
     student = {}
     html.css("div.social-icon-controler a").each do |student|
       url = student.attribute("href")
-      students_hash[:twitter_url] = url if url.include?("twitter")
-      students_hash[:linkedin_url] = url if url.include?("linkedin")
-      students_hash[:github_url] = url if url.include?("github")
-      students_hash[:blog_url] = url if student.css("img").attribute("src").text.include?("rss")
+      student[:twitter_url] = url if url.include?("twitter")
+      student[:linkedin_url] = url if url.include?("linkedin")
+      student[:github_url] = url if url.include?("github")
+      student[:blog_url] = url if student.css("img").attribute("src").text.include?("rss")
   end
-      students_hash[:profile_quote] = html.css("div.profile-quote").text
-      students_hash[:bio] = html.css("div.bio-content p").text
-  students_hash
+      student[:profile_quote] = html.css("div.profile-quote").text
+      student[:bio] = html.css("div.bio-content p").text
+  student
   end
 
 end
