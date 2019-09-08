@@ -28,7 +28,7 @@ class Scraper
       given_student[:github_url] = url if url.include?("github")
       given_student[:blog_url] = url if given_student.css("img").attribute("src").text.include?("rss")
   end
-      student[:profile_quote] = html.css("div.profile-quote").text
+      student[:profile_quote] = doc.css("div.profile-quote").text
       student[:bio] = html.css("div.bio-content p").text
   student
   end
