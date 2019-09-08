@@ -33,12 +33,8 @@ class Scraper
         student[:blog] = social_icon
       end
     end
-    # if doc.css("div.bio-content.content-holder div.description-holder p")
       student[:bio] = doc.css("div.bio-content.content-holder div.description-holder p").text
-    # end
-    # if doc.css(".profile-quote")
       student[:profile_quote] = doc.css(".profile-quote").text
-    # end
     student
   end
 
