@@ -30,7 +30,7 @@ class Scraper
       given_student[:blog_url] = url if given_student.css("img").attribute("src").text.include?("rss")
       given_student[:twitter_url] = url if url.include?("twitter")
   end
-      
+
   student
   end
 
